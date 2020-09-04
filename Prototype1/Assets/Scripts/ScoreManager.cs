@@ -1,8 +1,16 @@
-﻿using System.Collections;
+﻿/*
+* Benjamin Schuster
+* Prototype 1
+* Manages player score, if game was won/lost, and restarting the game
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
+//Add script on any object in scene (I chose eventsystem)
 public class ScoreManager : MonoBehaviour
 {
     public static bool gameOver;

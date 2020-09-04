@@ -1,7 +1,14 @@
-﻿using System.Collections;
+﻿/*
+* Benjamin Schuster
+* Prototype 1
+* Detects if player fell off map
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Add script to player
 public class PlayerLoseOnFall : MonoBehaviour
 {
 

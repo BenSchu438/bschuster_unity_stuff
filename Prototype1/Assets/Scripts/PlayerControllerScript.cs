@@ -1,7 +1,14 @@
-﻿using System.Collections;
+﻿/*
+* Benjamin Schuster
+* Prototype 1
+* Controls movement for the player
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Add script onto player
 public class PlayerControllerScript : MonoBehaviour
 {
     // Update is called once per frame
