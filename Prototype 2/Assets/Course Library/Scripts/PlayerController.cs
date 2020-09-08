@@ -11,10 +11,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
-    public float verticalInput;
+    //public float verticalInput;
     public float speed = 10.0f;
     private float xRange = 14;
-    private float zRange = 14;
+    //private float zRange = 14;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +27,11 @@ public class PlayerController : MonoBehaviour
     {
         //Get keyboard input
         horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+       // verticalInput = Input.GetAxis("Vertical");
 
         //Move player according to input
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
-        transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
+        //transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
 
         //Stop player from moving out of x-axis boundaries
         if(transform.position.x < -xRange)
@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Stop player from moving out of z-axis boundaries
+        /*
         if (transform.position.z <= 0)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, 0);
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
         }
+        */
 
     }
 }
