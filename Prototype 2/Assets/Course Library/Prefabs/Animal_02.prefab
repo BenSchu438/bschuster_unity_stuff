@@ -783,6 +783,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2969598584166239708}
   - component: {fileID: 2969598584156896902}
+  - component: {fileID: 114131774797855398}
+  - component: {fileID: 114979568816710972}
   m_Layer: 0
   m_Name: Animal_02
   m_TagString: Untagged
@@ -834,6 +836,33 @@ Animator:
   m_HasTransformHierarchy: 0
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114131774797855398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2969598584166520328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a5c2d864545cb4587fa7906ccc914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+--- !u!114 &114979568816710972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2969598584166520328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff5a5a25e9ff7346ab94b219fd3b6df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBound: 20
+  bottomBound: -10
 --- !u!1 &2969598584166541972
 GameObject:
   m_ObjectHideFlags: 0

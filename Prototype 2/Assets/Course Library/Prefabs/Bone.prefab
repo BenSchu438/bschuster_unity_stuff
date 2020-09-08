@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6280639709892956362}
   - component: {fileID: 6280639709893942962}
   - component: {fileID: 1192022144625734440}
+  - component: {fileID: 114540554835657826}
+  - component: {fileID: 114973585577775748}
   m_Layer: 0
   m_Name: Bone
   m_TagString: Untagged
@@ -95,6 +97,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114540554835657826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6280639709891854454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a5c2d864545cb4587fa7906ccc914a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
+--- !u!114 &114973585577775748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6280639709891854454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff5a5a25e9ff7346ab94b219fd3b6df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBound: 20
+  bottomBound: -10
 --- !u!1 &8974966352601785391
 GameObject:
   m_ObjectHideFlags: 0
