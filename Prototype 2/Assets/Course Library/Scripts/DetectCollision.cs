@@ -27,6 +27,7 @@ public class DetectCollision : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         displayScoreScript.score++;
+
         Destroy(other.gameObject);
         Destroy(gameObject);
     }
