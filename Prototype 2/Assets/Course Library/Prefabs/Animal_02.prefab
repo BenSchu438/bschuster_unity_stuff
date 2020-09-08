@@ -785,6 +785,7 @@ GameObject:
   - component: {fileID: 2969598584156896902}
   - component: {fileID: 114131774797855398}
   - component: {fileID: 114979568816710972}
+  - component: {fileID: 54920913328202190}
   m_Layer: 0
   m_Name: Animal_02
   m_TagString: Untagged
@@ -799,7 +800,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2969598584166520328}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 10.17, y: 0.11, z: 8.89}
   m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children:
@@ -816,7 +817,7 @@ Transform:
   - {fileID: 3604253621257181396}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &2969598584156896902
 Animator:
   serializedVersion: 3
@@ -848,7 +849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9a5c2d864545cb4587fa7906ccc914a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 3
 --- !u!114 &114979568816710972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,6 +864,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topBound: 20
   bottomBound: -10
+--- !u!54 &54920913328202190
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2969598584166520328}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2969598584166541972
 GameObject:
   m_ObjectHideFlags: 0
