@@ -10,10 +10,12 @@ using UnityEngine;
 //Add on projectile script
 public class DetectCollision : MonoBehaviour
 {
+    private DisplayScore displayScoreScript;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        displayScoreScript = GameObject.FindGameObjectWithTag("DisplayScoreText").GetComponent<DisplayScore>();
     }
 
     // Update is called once per frame
@@ -24,7 +26,8 @@ public class DetectCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other);
+        displayScoreScript.score++;
+        Destroy(other.gameObject);
         Destroy(gameObject);
     }
 }
