@@ -9,9 +9,15 @@ using UnityEngine;
 
 public class DetectCollisionsX : MonoBehaviour
 {
+    private DisplayScoreScript displayScoreScript;
+    private void Start()
+    {
+        displayScoreScript = GameObject.FindGameObjectWithTag("DisplayScoreText").GetComponent<DisplayScoreScript>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
+        displayScoreScript.score++;
         Destroy(gameObject);
     }
 }
