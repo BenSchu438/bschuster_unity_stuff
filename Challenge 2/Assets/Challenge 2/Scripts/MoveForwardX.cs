@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Benjamin Schuster
+ * Challenge 2
+ * Moves object forwards
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

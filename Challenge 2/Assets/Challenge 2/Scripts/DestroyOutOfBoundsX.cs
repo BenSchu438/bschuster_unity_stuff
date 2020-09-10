@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Benjamin Schuster
+ * Challenge 2
+ * Destroys objects that go off-screen
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

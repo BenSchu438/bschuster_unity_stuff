@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Benjamin Schuster
+ * Challenge 2
+ * Randomly spawns balls
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,17 +21,32 @@ public class SpawnManagerX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnRandomBall", startDelay, spawnInterval);
+        //InvokeRepeating("SpawnRandomBall", startDelay, spawnInterval);
+        StartCoroutine(SpawnRandomBallWithCoroutine());
     }
 
     // Spawn random ball at random x position at top of play area
     void SpawnRandomBall ()
     {
         // Generate random ball index and random spawn position
+        int ballIndex = Random.Range(0, ballPrefabs.Length);
         Vector3 spawnPos = new Vector3(Random.Range(spawnLimitXLeft, spawnLimitXRight), spawnPosY, 0);
 
         // instantiate ball at random spawn location
-        Instantiate(ballPrefabs[0], spawnPos, ballPrefabs[0].transform.rotation);
+        Instantiate(ballPrefabs[0], spawnPos, ballPrefabs[ballIndex].transform.rotation);
+
     }
 
+    IEnumerator SpawnRandomBallWithCoroutine()
+    {
+        yield return new WaitForSeconds(startDelay);
+        spawnInterval = Random.Range(3.0f, 5.0f);
+        while(true)
+        {
+            SpawnRandomBall();
+            spawnInterval = Random.Range(3.0f, 5.0f);
+            Debug.Log(spawnInterval.ToString());
+            yield return new WaitForSeconds(spawnInterval);
+        }
+    }
 }
