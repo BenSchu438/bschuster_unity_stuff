@@ -11,17 +11,19 @@ public class ObstacleMove : MonoBehaviour
 {
     public float speed;
     private float leftBound = -15;
+    private PlayerController playerRef;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * speed);
+        if(!playerRef.gameOver)
+            transform.Translate(Vector3.left * Time.deltaTime * speed);
 
         if (transform.position.x < leftBound && gameObject.CompareTag("obstacle"))
         {

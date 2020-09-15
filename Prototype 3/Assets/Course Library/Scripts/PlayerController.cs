@@ -47,5 +47,11 @@ public class PlayerController : MonoBehaviour
         {
             isOnGround = true;
         }
+
+        if(collision.gameObject.CompareTag("obstacle"))
+        {
+            Debug.Log("Game Over!");
+            gameOver = true;
+        }
     }
 }
