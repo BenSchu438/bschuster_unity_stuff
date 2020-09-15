@@ -23,7 +23,7 @@ public class TriggerZoneScoreScript : MonoBehaviour
     {
         
     }
-    private void onTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Triggered!");
 
