@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
-        Physics.gravity *= gravityModifier;
+        if(Physics.gravity.y > -10)
+            Physics.gravity *= gravityModifier;
     }
 
     // Update is called once per frame
@@ -35,10 +35,6 @@ public class PlayerController : MonoBehaviour
             isOnGround = false;
         }
 
-        /*
-        if (transform.position.y < 0)
-            isOnGround = true;
-        */
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -50,7 +46,6 @@ public class PlayerController : MonoBehaviour
 
         if(collision.gameObject.CompareTag("obstacle"))
         {
-            Debug.Log("Game Over!");
             gameOver = true;
         }
     }

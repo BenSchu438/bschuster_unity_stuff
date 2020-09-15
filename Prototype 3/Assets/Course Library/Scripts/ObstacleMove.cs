@@ -11,12 +11,15 @@ public class ObstacleMove : MonoBehaviour
 {
     public float speed;
     private float leftBound = -15;
+
     private PlayerController playerRef;
+    private UIManager scoreRef;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        scoreRef = GameObject.FindGameObjectWithTag("GameController").GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -29,6 +32,5 @@ public class ObstacleMove : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
     }
 }
