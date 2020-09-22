@@ -15,8 +15,12 @@ public class PlayerControllerX : MonoBehaviour
     public float upperBound;
 
     public float floatForce;
+    public float bounceForce;
     private float gravityModifier = 1.5f;
     private Rigidbody playerRb;
+
+    public ForceMode floatForceMode;
+    public ForceMode bounceForceMode;
 
     public ParticleSystem explosionParticle;
     public ParticleSystem fireworksParticle;
@@ -24,7 +28,7 @@ public class PlayerControllerX : MonoBehaviour
     private AudioSource playerAudio;
     public AudioClip moneySound;
     public AudioClip explodeSound;
-
+    public AudioClip bounceSound;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +53,7 @@ public class PlayerControllerX : MonoBehaviour
         // While space is pressed and player is low enough, float up (ask professor)
         if (Input.GetKey(KeyCode.Space) && !gameOver && isLowEnough)
         {
-            playerRb.AddForce(Vector3.up * floatForce);
+            playerRb.AddForce(Vector3.up * floatForce, floatForceMode);
         }
 
         //prevent inertia from flinging balloon offscreen
@@ -76,6 +80,13 @@ public class PlayerControllerX : MonoBehaviour
             playerAudio.PlayOneShot(moneySound, 1.0f);
             Destroy(other.gameObject);
 
+        }
+
+        // if player collides with ground, bounce
+        else if (other.gameObject.CompareTag("Ground"))
+        {
+            playerRb.AddForce(Vector3.up * bounceForce, bounceForceMode);
+            playerAudio.PlayOneShot(bounceSound, 1.0f);
         }
 
     }
