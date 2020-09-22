@@ -897,6 +897,8 @@ MonoBehaviour:
   explosionParticle: {fileID: 1383433961}
   dirtParticle: {fileID: 2019388473}
   musicRef: {fileID: 534669906}
+  jumpSound: {fileID: 8300000, guid: 113ee460fadc340e4957a7404a9fbb27, type: 3}
+  crashSound: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
 --- !u!4 &1523414045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 03ffd135f81a3fb4cb6f2e6e944f979d,
@@ -913,8 +915,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
