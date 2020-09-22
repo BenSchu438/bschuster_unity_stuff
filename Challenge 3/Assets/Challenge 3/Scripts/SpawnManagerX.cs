@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Benjamin Schuster
+ * Challenge 3
+ * Spawnmanager
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,9 +17,9 @@ public class SpawnManagerX : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        InvokeRepeating("PrawnsObject", spawnDelay, spawnInterval);
+    { 
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerControllerX>();
+        InvokeRepeating("SpawnObjects", spawnDelay, spawnInterval);
     }
 
     // Spawn obstacles

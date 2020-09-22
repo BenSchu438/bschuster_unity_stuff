@@ -11,6 +11,8 @@ using UnityEngine;
 public class PlayerControllerX : MonoBehaviour
 {
     public bool gameOver;
+    private bool isLowEnough = true;
+    public float upperBound;
 
     public float floatForce;
     private float gravityModifier = 1.5f;
@@ -39,11 +41,20 @@ public class PlayerControllerX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // While space is pressed and player is low enough, float up
-        if (Input.GetKey(KeyCode.Space) && !gameOver)
+        if (transform.position.y < upperBound)
+            isLowEnough = true;
+        else
+            isLowEnough = false;
+
+        // While space is pressed and player is low enough, float up (ask professor)
+        if (Input.GetKey(KeyCode.Space) && !gameOver && isLowEnough)
         {
             playerRb.AddForce(Vector3.up * floatForce);
         }
+
+        //prevent inertia from flinging balloon offscreen
+        if (!isLowEnough)
+            transform.position = new Vector3(transform.position.x, upperBound, transform.position.z);
     }
 
     private void OnCollisionEnter(Collision other)
