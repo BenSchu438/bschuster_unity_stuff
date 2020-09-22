@@ -34,7 +34,9 @@ public class PlayerControllerX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Physics.gravity *= gravityModifier;
+        if (Physics.gravity.y > -10)
+            Physics.gravity *= gravityModifier;
+
         playerAudio = GetComponent<AudioSource>();
         playerRb = GetComponent<Rigidbody>();
         scoreRef = GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManagerX>();

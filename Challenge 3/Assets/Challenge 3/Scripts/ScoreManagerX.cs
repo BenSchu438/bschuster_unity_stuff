@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Benjamin Schuster
+ * Challenge 3
+ * Manage score and scene restart
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +16,10 @@ public class ScoreManagerX : MonoBehaviour
     public bool gameOver = false;
     public bool won = false;
 
+    public GameObject loseText;
+    public GameObject winText;
+    public Text scoreText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,19 +28,29 @@ public class ScoreManagerX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        scoreText.text = "Score: " + score;
+
         if(score >= winScore)
         {
             gameOver = true;
             won = true;
         }
 
+        
         if(gameOver && won)
         {
-            Debug.Log("You Win!");
+            winText.SetActive(true);
         }
         else if (gameOver)
         {
-            Debug.Log("GameOver!");
+            loseText.SetActive(true);
         }
+
+        if(gameOver && Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        
     }
 }
