@@ -25,7 +25,7 @@ public class TriggerZoneScoreScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggered!");
+        //Debug.Log("Triggered!");
 
         if(other.gameObject.CompareTag("Player") && !scored)
         {
