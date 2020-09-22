@@ -19,14 +19,19 @@ public class PlayerController : MonoBehaviour
     public bool gameOver = false;
 
     private Animator playerAnimator;
+
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticle;
+    public AudioSource musicRef;
+    private AudioSource deathRef;
 
     // Start is called before the first frame update
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
         playerAnimator.SetFloat("Speed_f", 1.0f);
+
+        deathRef = GetComponent<AudioSource>();
 
         rb = GetComponent<Rigidbody>();
         if(Physics.gravity.y > -10)
@@ -48,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("ground"))
+        if(collision.gameObject.CompareTag("ground") && !gameOver)
         {
             isOnGround = true;
             dirtParticle.Play();
@@ -59,6 +64,8 @@ public class PlayerController : MonoBehaviour
             gameOver = true;
             dirtParticle.Stop();
             explosionParticle.Play();
+            musicRef.Stop();
+            deathRef.Play();
             playerAnimator.SetInteger("DeathType_int", 1);
             playerAnimator.SetBool("Death_b", true);
             
