@@ -10,7 +10,6 @@ using UnityEngine;
 
 public class PlayerControllerX : MonoBehaviour
 {
-    public bool gameOver;
     private bool isLowEnough = true;
     public float upperBound;
 
@@ -30,13 +29,16 @@ public class PlayerControllerX : MonoBehaviour
     public AudioClip explodeSound;
     public AudioClip bounceSound;
 
+    private ScoreManagerX scoreRef;
+
     // Start is called before the first frame update
     void Start()
     {
         Physics.gravity *= gravityModifier;
         playerAudio = GetComponent<AudioSource>();
-
         playerRb = GetComponent<Rigidbody>();
+        scoreRef = GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManagerX>();
+
         // Apply a small upward force at the start of the game
         playerRb.AddForce(Vector3.up * 5, ForceMode.Impulse);
 
@@ -51,7 +53,7 @@ public class PlayerControllerX : MonoBehaviour
             isLowEnough = false;
 
         // While space is pressed and player is low enough, float up (ask professor)
-        if (Input.GetKey(KeyCode.Space) && !gameOver && isLowEnough)
+        if (Input.GetKey(KeyCode.Space) && !scoreRef.gameOver && isLowEnough)
         {
             playerRb.AddForce(Vector3.up * floatForce, floatForceMode);
         }
@@ -68,7 +70,7 @@ public class PlayerControllerX : MonoBehaviour
         {
             explosionParticle.Play();
             playerAudio.PlayOneShot(explodeSound, 1.0f);
-            gameOver = true;
+            scoreRef.gameOver = true;
             Debug.Log("Game Over!");
             Destroy(other.gameObject);
         } 
@@ -78,12 +80,12 @@ public class PlayerControllerX : MonoBehaviour
         {
             fireworksParticle.Play();
             playerAudio.PlayOneShot(moneySound, 1.0f);
+            scoreRef.score++;
             Destroy(other.gameObject);
-
         }
 
         // if player collides with ground, bounce
-        else if (other.gameObject.CompareTag("Ground"))
+        else if (other.gameObject.CompareTag("Ground") && !scoreRef.gameOver)
         {
             playerRb.AddForce(Vector3.up * bounceForce, bounceForceMode);
             playerAudio.PlayOneShot(bounceSound, 1.0f);

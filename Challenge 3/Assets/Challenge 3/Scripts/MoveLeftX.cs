@@ -10,20 +10,20 @@ using UnityEngine;
 public class MoveLeftX : MonoBehaviour
 {
     public float speed;
-    private PlayerControllerX playerControllerScript;
+    private ScoreManagerX scoreRef;
     private float leftBound = -10;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerControllerX>();
+        scoreRef = GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManagerX>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // If game is not over, move to the left
-        if (!playerControllerScript.gameOver)
+        if (!scoreRef.gameOver)
         {
             transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
         }
