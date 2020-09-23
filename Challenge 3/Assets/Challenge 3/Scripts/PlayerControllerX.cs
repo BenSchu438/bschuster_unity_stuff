@@ -10,7 +10,7 @@ using UnityEngine;
 
 public class PlayerControllerX : MonoBehaviour
 {
-    private bool isLowEnough = true;
+    //private bool isLowEnough = true;
     public float upperBound;
 
     public float floatForce;
@@ -49,20 +49,27 @@ public class PlayerControllerX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (transform.position.y < upperBound)
             isLowEnough = true;
         else
             isLowEnough = false;
 
-        // While space is pressed and player is low enough, float up (ask professor)
-        if (Input.GetKey(KeyCode.Space) && !scoreRef.gameOver && isLowEnough)
+        */
+
+        // While space is pressed, float up. Dont need isLowEnough now that I use a invisible wall as the upper barrier
+        if (Input.GetKey(KeyCode.Space) && !scoreRef.gameOver)
         {
             playerRb.AddForce(Vector3.up * floatForce, floatForceMode);
         }
-
+        /*
         //prevent inertia from flinging balloon offscreen
         if (!isLowEnough)
-            transform.position = new Vector3(transform.position.x, upperBound, transform.position.z);
+        {
+            //playerRb.velocity = Vector3.zero;
+            //transform.position = new Vector3(transform.position.x, upperBound, transform.position.z);
+        }
+        */
     }
 
     private void OnCollisionEnter(Collision other)
