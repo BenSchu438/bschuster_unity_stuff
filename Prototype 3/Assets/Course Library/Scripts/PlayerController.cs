@@ -62,8 +62,8 @@ public class PlayerController : MonoBehaviour
             isOnGround = true;
             dirtParticle.Play();
         }
-
-        if(collision.gameObject.CompareTag("obstacle"))
+        //Added !gameOver so your character wont die when you win
+        if(collision.gameObject.CompareTag("obstacle") && !gameOver)
         {
             //set scene to game over
             gameOver = true;
