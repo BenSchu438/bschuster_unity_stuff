@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 9d97930215ce048d6b24d65458ee8972
-timeCreated: 1509970124
-licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
     21300000: EnvironmentProps_TileSet_0
@@ -29,7 +27,7 @@ TextureImporter:
     21300044: EnvironmentProps_TileSet_22
     21300046: EnvironmentProps_TileSet_23
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -47,6 +45,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -57,7 +57,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: 0
     aniso: -1
-    mipBias: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -69,18 +69,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -89,7 +92,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Standalone
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -98,7 +103,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: iPhone
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -107,7 +114,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Android
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -116,6 +125,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -133,6 +143,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 9f54d0384db573344945bf84e9532bc9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_1
       rect:
@@ -147,6 +163,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 7138d094112b72742a0e8e26da8d4216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_2
       rect:
@@ -161,6 +183,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a55d81d5f0d8c6848a959a2f1d06e0dd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_3
       rect:
@@ -175,6 +203,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: f24b8d6a4b3251a4fb3c754270d34968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_4
       rect:
@@ -189,6 +223,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 97f68225aa28ad845a5b10cb50513391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_5
       rect:
@@ -203,6 +243,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 961b1f9463b39c3409d9cfa303d111e6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_6
       rect:
@@ -217,6 +263,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c7ef59c29bdefc54098868a4325b254f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_7
       rect:
@@ -231,6 +283,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8a275f159f4f82c428ad5b2599298f37
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_8
       rect:
@@ -245,6 +303,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: bb796670f1a44ff40b8dd6e6fa60e193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_9
       rect:
@@ -259,6 +323,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 79162fca024bf1f4ab23cbf2af42f6a2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_10
       rect:
@@ -273,6 +343,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6a1c36336e512014ca52900675a42128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_11
       rect:
@@ -287,6 +363,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 06cb172f89ecbae429d862ed0a3eb90e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_12
       rect:
@@ -301,6 +383,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 7c78cf43945a47146992334aaa0b8ae4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_13
       rect:
@@ -315,6 +403,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 38fced5ac72ef2b498de2ef670d56225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_14
       rect:
@@ -329,6 +423,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4a9643b79884eb64c9d68a198805caa6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_15
       rect:
@@ -343,6 +443,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 060fc3af8c970514d92aa4dc0b6978e2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_16
       rect:
@@ -357,6 +463,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: f1c417883c716344f9f53e2992043d4f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_17
       rect:
@@ -371,6 +483,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c815545f5b6f33d459eb71503bec7af3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_18
       rect:
@@ -385,6 +503,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 20144c3fbcfc75b40976b04388d82ffd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_19
       rect:
@@ -399,6 +523,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8c26000d6cdc4784dba08f037a8645a8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_20
       rect:
@@ -413,6 +543,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a908a258052b3c04ca778f60e46a312d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_21
       rect:
@@ -427,6 +563,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: b1555d399d4d80540980a077022e1d27
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_22
       rect:
@@ -441,6 +583,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c95a9c95290a20c40954a28e049dd0c1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: EnvironmentProps_TileSet_23
       rect:
@@ -455,9 +603,23 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6b679d4abcf07b442af774a5e82a34cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
+    bones: []
+    spriteID: 
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

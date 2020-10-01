@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 3756c62b1e7a74928a9c6f241d0a670f
-timeCreated: 1509981405
-licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
     21300000: Waterfall_SpriteSheet_0
@@ -15,7 +13,7 @@ TextureImporter:
     21300016: Waterfall_SpriteSheet_8
     21300018: Waterfall_SpriteSheet_9
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -33,6 +31,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -43,7 +43,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: 0
     aniso: -1
-    mipBias: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -55,18 +55,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
@@ -75,7 +78,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Standalone
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
     maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
@@ -84,7 +89,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: iPhone
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
     maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
@@ -93,7 +100,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Android
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
     maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
@@ -102,6 +111,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -119,6 +129,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2b8d3c7f5afe4e94197b4b9583fb2e96
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Waterfall_SpriteSheet_1
       rect:
@@ -133,6 +149,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0bf5bff1210eaab40ae341b07d754b7e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Waterfall_SpriteSheet_2
       rect:
@@ -147,6 +169,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2139ef63d09acb44b9858ef40720bccb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Waterfall_SpriteSheet_3
       rect:
@@ -161,6 +189,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0d8be4c35e580164db65842abe10f0ea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Waterfall_SpriteSheet_4
       rect:
@@ -175,6 +209,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 9b43ee15162f9d2498ea5298e50e73d3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Waterfall_SpriteSheet_5
       rect:
@@ -189,6 +229,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: b024485cd0f94b74b8a25c3d49000647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Waterfall_SpriteSheet_6
       rect:
@@ -203,6 +249,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 187cd79bc78b88d40931d9b28dc5f4da
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Waterfall_SpriteSheet_7
       rect:
@@ -217,6 +269,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 35171419efb44d3459ef766757374b99
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Waterfall_SpriteSheet_8
       rect:
@@ -231,6 +289,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a804be7f8e33c3346becfac124bfabe4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Waterfall_SpriteSheet_9
       rect:
@@ -245,9 +309,23 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 47684f1f418f34040825c0e5c3262810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
+    bones: []
+    spriteID: 
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

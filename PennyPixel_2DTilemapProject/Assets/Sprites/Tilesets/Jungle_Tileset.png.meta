@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 3b30003999f7c419b878b6e3e3948812
-timeCreated: 1510223560
-licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
     21300000: Jungle_Tileset_Spritesheet_0
@@ -101,7 +99,7 @@ TextureImporter:
     21300188: Jungle_Tileset_46
     21300190: Jungle_Tileset_47
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -119,6 +117,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: -1
     aniso: -1
-    mipBias: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -141,18 +141,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -161,7 +164,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Standalone
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -170,7 +175,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: iPhone
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -179,7 +186,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Android
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -188,6 +197,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -205,6 +215,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e1f186826f125ed4cb4551a0c794487a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_1
       rect:
@@ -219,6 +235,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 47d425d548ab37f4dab9dce8dd109ce1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_2
       rect:
@@ -233,6 +255,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: b29c4d3d1efa09242a4e32d2d974ead7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_3
       rect:
@@ -247,6 +275,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c5776b64d67823945b875dec152d4d63
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_4
       rect:
@@ -261,6 +295,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 135a1d5918263f848ae973147b4af408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_5
       rect:
@@ -275,6 +315,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: d9427d9c2517e3544b8964f15afc1e75
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_6
       rect:
@@ -289,6 +335,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0c838437862bc764f97c05d3149d265f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_7
       rect:
@@ -303,6 +355,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: d3d1164298bf58d4ab850bd39d1cd5ad
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_8
       rect:
@@ -317,6 +375,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a01da314195042d429bc7810f50f7779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_9
       rect:
@@ -331,6 +395,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 5c9f071db7ae40040b4a94a971e62a5f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_10
       rect:
@@ -345,6 +415,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: bd7ea70a8fb2c2d4dbba33a41dd44fdb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_11
       rect:
@@ -359,6 +435,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 99c40d8f1d5139147ae2bf0d55ceaf29
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_12
       rect:
@@ -373,6 +455,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: d1740588e0a31b04fa9797620e5ffba8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_13
       rect:
@@ -387,6 +475,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 99c31b82be17ce242969ee37b7458735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_14
       rect:
@@ -401,6 +495,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22f5e444f67a778408e9b3973cce6bc6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_15
       rect:
@@ -415,6 +515,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ae5ea5e4933e76445a41a5d75741dbc2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_16
       rect:
@@ -429,6 +535,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e20dc1ea6d6903e48aa7ececb5db7132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_17
       rect:
@@ -443,6 +555,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c9b53e3de4f644247b99d811ab87e08e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_18
       rect:
@@ -457,6 +575,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 7b19007410b12bf46bc605cd41b2ba40
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_19
       rect:
@@ -471,6 +595,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4acff72a08168fb4d9b1ab593499c83c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_20
       rect:
@@ -485,6 +615,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 28de23fafe340c14698b828ebc692d39
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_21
       rect:
@@ -499,6 +635,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 3ff648e2cc1d1eb4aaa4c98d8b9abb1d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_22
       rect:
@@ -513,6 +655,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cab31c7301aaafe4e8fa928aa74c7793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_23
       rect:
@@ -527,6 +675,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: de2eb70e6f96bcc4294942cbb6533db7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_24
       rect:
@@ -541,6 +695,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e815b0187bfdff7469e2a04a3bc3da54
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_25
       rect:
@@ -555,6 +715,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 34cad41c856fc6446b8b2d41fc144fea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_26
       rect:
@@ -569,6 +735,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c6fb21bafce8b0e488ab85feedde8910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_27
       rect:
@@ -583,6 +755,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: b9aa96112a8fdbc4c8661cb49dda5763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_28
       rect:
@@ -597,6 +775,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: f2e85d3bca6e08b48a94cc4e4c611e31
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_29
       rect:
@@ -611,6 +795,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 7bc5674e1c003c545bb2a58e79f170ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_30
       rect:
@@ -625,6 +815,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: b6af6f7c03e9ced488afc97dcf90d87d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Jungle_Tileset_31
       rect:
@@ -639,9 +835,23 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 9c613264891d6514893e821fd5fe5219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
+    bones: []
+    spriteID: 
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
