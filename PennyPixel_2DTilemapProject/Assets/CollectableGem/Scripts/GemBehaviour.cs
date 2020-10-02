@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Benjamin Schuster
+ * Prototype 4
+ * Gem Script
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,11 +14,13 @@ public class GemBehaviour : MonoBehaviour
 	public GameObject collectedParticleSystem;
 	public CircleCollider2D gemCollider2D;
 
+    private Score scoreRef;
 	private float durationOfCollectedParticleSystem;
 
 
 	void Start()
 	{
+        scoreRef = GameObject.FindGameObjectWithTag("GameController").GetComponent<Score>();
 		durationOfCollectedParticleSystem = collectedParticleSystem.GetComponent<ParticleSystem>().main.duration;
 	}
 
@@ -29,6 +36,7 @@ public class GemBehaviour : MonoBehaviour
 		gemCollider2D.enabled = false;
 		gemVisuals.SetActive (false);
 		collectedParticleSystem.SetActive (true);
+        scoreRef.score++;
 		Invoke ("DeactivateGemGameObject", durationOfCollectedParticleSystem);
 
 	}

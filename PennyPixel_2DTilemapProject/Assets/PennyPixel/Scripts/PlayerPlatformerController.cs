@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Benjamin Schuster
+ * Prototype 4
+ * Controls player and resets if falls 
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,28 +14,35 @@ public class PlayerPlatformerController : PhysicsObject {
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    private Vector2 startPosition;
+    private Score gameRef;
 
     // Use this for initialization
     void Awake () 
     {
+        gameRef = GameObject.FindGameObjectWithTag("GameController").GetComponent<Score>();
         spriteRenderer = GetComponent<SpriteRenderer> (); 
         animator = GetComponent<Animator> ();
+        startPosition = new Vector2(transform.position.x, transform.position.y);
     }
 
     protected override void ComputeVelocity()
     {
         Vector2 move = Vector2.zero;
 
-        move.x = Input.GetAxis ("Horizontal");
-
-        if (Input.GetButtonDown ("Jump") && grounded) {
-            velocity.y = jumpTakeOffSpeed;
-        } else if (Input.GetButtonUp ("Jump")) 
+        if (!gameRef.gameOver)
         {
-            if (velocity.y > 0) {
-                velocity.y = velocity.y * 0.5f;
+            move.x = Input.GetAxis("Horizontal");
+
+            if (Input.GetButtonDown("Jump") && grounded) {
+                velocity.y = jumpTakeOffSpeed;
+            } else if (Input.GetButtonUp("Jump"))
+            {
+                if (velocity.y > 0) {
+                    velocity.y = velocity.y * 0.5f;
+                }
             }
-        }
+    }
 
         if(move.x > 0.01f)
         {
@@ -45,6 +57,12 @@ public class PlayerPlatformerController : PhysicsObject {
             {
                 spriteRenderer.flipX = true;
             }
+        }
+
+        //set player back at start if falls off
+        if(transform.position.y <= -5)
+        {
+            transform.position = startPosition;
         }
 
         animator.SetBool ("grounded", grounded);
