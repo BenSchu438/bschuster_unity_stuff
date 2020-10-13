@@ -12,6 +12,7 @@ public class ShootWithRaycast : MonoBehaviour
     public float damage = 10f;
     public float range = 100f;
     public Camera cam;
+    public ParticleSystem muzzelFlash;
 
     private void Update()
     {
@@ -23,6 +24,8 @@ public class ShootWithRaycast : MonoBehaviour
 
     void Shoot()
     {
+        muzzelFlash.Play();
+
         RaycastHit hitInfo;
          if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hitInfo, range))
          {
