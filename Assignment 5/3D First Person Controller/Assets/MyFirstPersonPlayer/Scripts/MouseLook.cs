@@ -13,6 +13,7 @@ public class MouseLook : MonoBehaviour
     public GameObject player;
     private float verticalLookRotation = 0f;
 
+
     // Update is called once per frame
     void Update()
     {
@@ -30,5 +31,10 @@ public class MouseLook : MonoBehaviour
         verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
         //apply rotation to camera based on clamp
         transform.localRotation = Quaternion.Euler(verticalLookRotation, 0f, 0f);
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
