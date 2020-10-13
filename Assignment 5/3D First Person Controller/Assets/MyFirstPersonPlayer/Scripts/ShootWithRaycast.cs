@@ -12,7 +12,10 @@ public class ShootWithRaycast : MonoBehaviour
     public float damage = 10f;
     public float range = 100f;
     public Camera cam;
+
     public ParticleSystem muzzelFlash;
+
+    public float hitForce = 10f;
 
     private void Update()
     {
@@ -39,6 +42,10 @@ public class ShootWithRaycast : MonoBehaviour
                 target.TakeDamage(damage);
             }
 
+            if(hitInfo.rigidbody != null)
+            {
+                hitInfo.rigidbody.AddForce(cam.transform.TransformDirection(Vector3.forward) * hitForce, ForceMode.Impulse);
+            }
          }
 
     }
