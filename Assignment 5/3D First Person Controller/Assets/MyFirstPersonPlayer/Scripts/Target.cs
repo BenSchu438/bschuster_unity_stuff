@@ -10,6 +10,7 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     public float health = 50f;
+    public DoorScript linkedDoor;
 
     public void TakeDamage(float amount)
     {
@@ -23,6 +24,9 @@ public class Target : MonoBehaviour
 
     void Die()
     {
+        //tell whatever door its linked with that its been destroyed
+        if (linkedDoor != null)
+            linkedDoor.TargetDestroyed();
         Destroy(gameObject);
     }
 }
