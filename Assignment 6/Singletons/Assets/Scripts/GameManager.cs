@@ -7,13 +7,14 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-#region Singleton
-public class GameManager : MonoBehaviour
-{
-    public static GameManager instance;
 
+public class GameManager : Singleton<GameManager>
+{
     public int score;
     private string currentLevelName = string.Empty;
+
+    /*#region Singleton
+    public static GameManager instance;
 
     private void Awake()
     {
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    #endregion
+    #endregion*/
 
     public void LoadLevel(string levelName)
     {
