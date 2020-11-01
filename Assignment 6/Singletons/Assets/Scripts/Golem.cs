@@ -16,19 +16,19 @@ public class Golem : Enemy
         health = 150;
         damage = 30;
         speed = 5f;
-        minDistance = 10f;
+        minDistance = 7f;
         StartCoroutine(Move());
     }
 
     protected override IEnumerator Move()
     {
-        //look at player
-        transform.LookAt(player.transform);
-
+        Vector3 temp;
         //move towards player, or stop if too close
         while(true)
         {
-            transform.LookAt(player.transform, Vector3.up);
+            temp = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+            transform.LookAt(temp);
+
             if(Vector3.Distance(player.transform.position, transform.position) >= minDistance)
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
