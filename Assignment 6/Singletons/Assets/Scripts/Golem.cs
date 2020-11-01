@@ -9,15 +9,13 @@ using UnityEngine;
 
 public class Golem : Enemy
 {
-    protected int damage;
-
     // Start is called before the first frame update
     protected override void Awake()
     {
         base.Awake();
         health = 150;
         damage = 30;
-        GameManager.Instance.score += 5;
+        speed = 5f;
     }
     protected override void Attack(int dmg)
     {
@@ -32,6 +30,9 @@ public class Golem : Enemy
 
     public override void TakeDamage(int dmg)
     {
-        Debug.Log("Ouch! Dealt " + dmg + " damage! Rude!");
+        health -= dmg;
+        Debug.Log("Ouch! Dealt " + dmg + " damage! Rude!\n" + health + " health remaining.");
+        if (health <= 0)
+            Destroy(gameObject);
     }
 }

@@ -29,9 +29,16 @@ public class PlayerController : MonoBehaviour
     //public GameObject WinScreen;
     //public bool gameOver = false;
 
+    //weapon stuff
+    [SerializeField]
+    private Weapon weapon;
+
+
+
     private void Awake()
     {
         gravity *= gravityMulitplier;
+        weapon = GetComponentInChildren<Sword>();
     }
 
     void Update()
@@ -43,12 +50,15 @@ public class PlayerController : MonoBehaviour
         {
             velocity.y = -2f;
         }
+        //add gravity to velocity
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
 
         //check input
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-            //move player forward
+        //move player forward
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
 
@@ -58,11 +68,11 @@ public class PlayerController : MonoBehaviour
         //    velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         //}
 
+        if (Input.GetButtonDown("Fire1"))
+        {
+            weapon.Attack();
+        }
 
-            //add gravity to velocity
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
-       
 
     }
 

@@ -5,40 +5,24 @@
  */
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-
-
-public class Weapon: MonoBehaviour
+public abstract class Weapon: MonoBehaviour
 {
-    public int damageBonus;
+    protected int damage;
+    protected float range;
+    protected float cooldown;
+    protected bool ready;
 
-    public Enemy holder;
+    protected void Awake()
+    {
+        damage = 30;
+        range = 10f;
+        cooldown = 0.7f;
+        ready = true;
+    }
+
+    public abstract void Attack();
+    protected abstract IEnumerator Recharge();
     
-    public void Recharge()
-    {
-        Debug.Log("Recharging Weapon");
-    }
-
-    private void Awake()
-    {
-        holder = gameObject.GetComponent<Enemy>();
-        LoseWeapon(holder);
-    }
-
-    protected void LoseWeapon(Enemy enemy)
-    {
-        Debug.Log("Enemy lost weapon");
-    }
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
