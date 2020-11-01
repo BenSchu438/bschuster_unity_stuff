@@ -84,8 +84,8 @@ public class PlayerController : MonoBehaviour, IDamageable
         
         if (vulnerable)
         {
-            Debug.Log("Player took damage");
             health -= dmg;
+            Debug.Log("Player took damage, " + health + " health remaining.");
             vulnerable = false;
             StartCoroutine(Invulnerable());
         }

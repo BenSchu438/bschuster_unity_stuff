@@ -79,7 +79,11 @@ public class Golem : Enemy
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name.Equals("Player"))
+        if (collision.gameObject.name.Equals("Player"))
+        {
+            Debug.Log("touching player, should damage");
             player.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
+        }
     }
+    
 }
