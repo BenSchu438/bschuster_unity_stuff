@@ -11,6 +11,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     public GameObject pauseMenu;
+    public GameObject loseMenu;
+    public GameObject winMenu;
+
     public bool isPaused = false;
 
     private string CurrentLevelName = "MainMenu";
@@ -41,18 +44,21 @@ public class GameManager : Singleton<GameManager>
     private void Update()
     {
         //pauses and resumes on esc press. Cannot pause on main menu screen
-        if(Input.GetKeyDown(KeyCode.Escape) && !isPaused && !CurrentLevelName.Equals("MainMenu"))
+        if(Input.GetKeyDown(KeyCode.Escape) && !isPaused && !CurrentLevelName.Equals("MainMenu") && !gameOver)
         {
             Pause();
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused && !CurrentLevelName.Equals("MainMenu"))
+        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused && !CurrentLevelName.Equals("MainMenu") && !gameOver)
         {
             UnPause();
         }
 
-
-
-
+        if(gameOver)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
+            loseMenu.SetActive(true);
+        }
 
     }
 
@@ -66,26 +72,46 @@ public class GameManager : Singleton<GameManager>
             return;
         }
         CurrentLevelName = levelName;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void UnLoadLevel(string levelName)
     {
+        //as exiting level, reset win conditions
+        gameOver = false;
+        gameWon = false;
+
         AsyncOperation ao = SceneManager.UnloadSceneAsync(levelName);
         if (ao == null)
         {
             Debug.LogError("[GameManager] Unable to unload: " + levelName);
         }
         CurrentLevelName = "MainMenu";
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void UnloadCurrentLevel()
     {
+        //as exiting level, reset win conditions
+        gameOver = false;
+        gameWon = false;
+
         AsyncOperation ao = SceneManager.UnloadSceneAsync(CurrentLevelName);
         if (ao == null)
         {
             Debug.LogError("[GameManager] Unable to unload: " + CurrentLevelName);
         }
         CurrentLevelName = "MainMenu";
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void ReloadCurrentLevel()
+    {
+        string temp = CurrentLevelName;
+        UnloadCurrentLevel();
+        LoadLevel(temp);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     //pausing and unpausing

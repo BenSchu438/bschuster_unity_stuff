@@ -16,7 +16,7 @@ public class Golem : Enemy
     {
         base.Awake();
         health = 150;
-        damage = 40;
+        damage = 100;
         speed = 5f;
         minDistance = 15f;
         attacking = false;
