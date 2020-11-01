@@ -84,12 +84,14 @@ public class GameManager : Singleton<GameManager>
     //pausing and unpausing
     public void Pause()
     {
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
         isPaused = true;
     }
     public void UnPause()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
         isPaused = false;

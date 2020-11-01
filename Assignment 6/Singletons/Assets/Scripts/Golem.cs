@@ -16,16 +16,30 @@ public class Golem : Enemy
         health = 150;
         damage = 30;
         speed = 5f;
+        minDistance = 10f;
+        StartCoroutine(Move());
     }
+
+    protected override IEnumerator Move()
+    {
+        //look at player
+        transform.LookAt(player.transform);
+
+        //move towards player, or stop if too close
+        while(true)
+        {
+            transform.LookAt(player.transform, Vector3.up);
+            if(Vector3.Distance(player.transform.position, transform.position) >= minDistance)
+                transform.Translate(Vector3.forward * speed * Time.deltaTime);
+
+            yield return null;
+        }
+
+    }
+
     protected override void Attack(int dmg)
     {
         Debug.Log("Golem Attack");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public override void TakeDamage(int dmg)
