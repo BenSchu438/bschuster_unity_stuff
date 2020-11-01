@@ -18,6 +18,9 @@ public class GameManager : Singleton<GameManager>
 
     private string CurrentLevelName = "MainMenu";
 
+    //Win condition variable. Set to 99 in menu, reduced to appropriate levels once loaded into level
+    public int enemiesRemaining = 99;
+
     public bool gameOver = false;
     public bool gameWon = false;
 
@@ -53,13 +56,26 @@ public class GameManager : Singleton<GameManager>
             UnPause();
         }
 
-        if(gameOver)
+
+        if(enemiesRemaining <= 0)
+        {
+            gameOver = true;
+            gameWon = true;
+        }
+
+        if (gameOver && gameWon)
+        {
+            //Debug.Log("Opened Win Menu");
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
+            winMenu.SetActive(true);
+        }
+        else if(gameOver && !gameWon)
         {
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0f;
             loseMenu.SetActive(true);
         }
-
     }
 
     //load and unload levels
@@ -80,6 +96,7 @@ public class GameManager : Singleton<GameManager>
         //as exiting level, reset win conditions
         gameOver = false;
         gameWon = false;
+        GameManager.Instance.enemiesRemaining = 99;
 
         AsyncOperation ao = SceneManager.UnloadSceneAsync(levelName);
         if (ao == null)
@@ -95,6 +112,7 @@ public class GameManager : Singleton<GameManager>
         //as exiting level, reset win conditions
         gameOver = false;
         gameWon = false;
+        GameManager.Instance.enemiesRemaining = 99;
 
         AsyncOperation ao = SceneManager.UnloadSceneAsync(CurrentLevelName);
         if (ao == null)
@@ -104,6 +122,9 @@ public class GameManager : Singleton<GameManager>
         CurrentLevelName = "MainMenu";
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.None;
+        //as exiting level, reset win conditions
+        gameOver = false;
+        gameWon = false;
     }
 
     public void ReloadCurrentLevel()

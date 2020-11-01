@@ -74,7 +74,11 @@ public class Golem : Enemy
         health -= dmg;
         Debug.Log("Ouch! Dealt " + dmg + " damage! Rude!\n" + health + " health remaining.");
         if (health <= 0)
+        {
+            //If dead, deincrement win condition and destroy
+            GameManager.Instance.enemiesRemaining--;
             Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
