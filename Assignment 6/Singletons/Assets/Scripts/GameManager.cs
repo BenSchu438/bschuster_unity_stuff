@@ -10,11 +10,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    public int score;
     public GameObject pauseMenu;
     public bool isPaused = false;
 
     private string CurrentLevelName = "MainMenu";
+
+    public bool gameOver = false;
+    public bool gameWon = false;
 
     /*#region Singleton
     public static GameManager instance;
@@ -47,6 +49,11 @@ public class GameManager : Singleton<GameManager>
         {
             UnPause();
         }
+
+
+
+
+
     }
 
     //load and unload levels

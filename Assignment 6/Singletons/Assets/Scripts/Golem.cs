@@ -9,37 +9,64 @@ using UnityEngine;
 
 public class Golem : Enemy
 {
+    private bool attacking;
+
     // Start is called before the first frame update
     protected override void Awake()
     {
         base.Awake();
         health = 150;
-        damage = 30;
+        damage = 40;
         speed = 5f;
-        minDistance = 7f;
+        minDistance = 15f;
+        attacking = false;
         StartCoroutine(Move());
     }
 
     protected override IEnumerator Move()
     {
         Vector3 temp;
-        //move towards player, or stop if too close
-        while(true)
+        while (true)
         {
-            temp = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-            transform.LookAt(temp);
+            //look at player if not attacking
+            if (!attacking)
+            { 
+                temp = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+                transform.LookAt(temp);
+            }
 
-            if(Vector3.Distance(player.transform.position, transform.position) >= minDistance)
-                transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            //Move forward
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            
+            //if its within range and not already attacking, use its attack 
+            if (Vector3.Distance(player.transform.position, transform.position) <= minDistance && !attacking)
+            {
+                attacking = true;
+                StartCoroutine(Attack(damage));
+            }
 
             yield return null;
         }
 
     }
 
-    protected override void Attack(int dmg)
+    protected override IEnumerator Attack(int dmg)
     {
-        Debug.Log("Golem Attack");
+        speed = 0f;
+        //stay still before attacking
+        yield return new WaitForSeconds(2f);
+
+        //charge straight forward with increased speed
+        speed = 45f;
+        
+        yield return new WaitForSeconds(0.5f);
+
+        //return speed to normal, stay still for a moment
+        speed = 0f;
+        yield return new WaitForSeconds(3f);
+
+        speed = 5f;
+        attacking = false;
     }
 
     public override void TakeDamage(int dmg)
@@ -48,5 +75,11 @@ public class Golem : Enemy
         Debug.Log("Ouch! Dealt " + dmg + " damage! Rude!\n" + health + " health remaining.");
         if (health <= 0)
             Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name.Equals("Player"))
+            player.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
     }
 }

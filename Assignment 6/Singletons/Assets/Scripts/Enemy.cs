@@ -26,7 +26,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    protected abstract void Attack(int dmg);
+    protected abstract IEnumerator Attack(int dmg);
     protected abstract IEnumerator Move();
     public abstract void TakeDamage(int dmg);
 }

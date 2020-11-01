@@ -7,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
     public CharacterController controller;
     public float speed = 12f;
@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Weapon weapon;
 
+    //gamestate stuff
+    private int health = 100;
+    private bool vulnerable = true;
 
 
     private void Awake()
@@ -74,6 +77,28 @@ public class PlayerController : MonoBehaviour
         }
 
 
+    }
+
+    public void TakeDamage(int dmg)
+    {
+        
+        if (vulnerable)
+        {
+            Debug.Log("Player took damage");
+            health -= dmg;
+            vulnerable = false;
+            StartCoroutine(Invulnerable());
+        }
+        if (health <= 0)
+            GameManager.Instance.gameOver = true;
+    }
+    //make it so player has 3 seconds invulnerability after being hit
+    private protected IEnumerator Invulnerable()
+    {
+        Debug.Log("Invulnerable");
+        yield return new WaitForSeconds(3f);
+        vulnerable = true;
+        Debug.Log("Vulnerable");
     }
 
     //private void OnTriggerEnter(Collider other)
