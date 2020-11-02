@@ -11,14 +11,14 @@ using UnityEngine;
 public class Sword : Weapon
 {
     public Camera cam;
-    private float nextAttack;
-    private Animator animator;
+    protected float nextAttack;
+    protected Animator animator;
 
     //sound effects
-    private AudioSource swordAudio;
+    protected AudioSource swordAudio;
     public AudioClip swing;
 
-    private new void Awake()
+    protected override void Awake()
     {
         base.Awake();
         cam = GetComponentInParent<Camera>();

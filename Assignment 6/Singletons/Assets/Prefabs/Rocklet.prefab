@@ -1287,10 +1287,10 @@ GameObject:
   - component: {fileID: 3969392640352648633}
   - component: {fileID: 3911240486971031444}
   - component: {fileID: 3911240486971031447}
-  - component: {fileID: 3911240486971031446}
   - component: {fileID: 1903016382541818520}
+  - component: {fileID: 2698476230061083752}
   m_Layer: 0
-  m_Name: Golem
+  m_Name: Rocklet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1305,7 +1305,7 @@ Transform:
   m_GameObject: {fileID: 3910116346616829631}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 340.5, y: 184.23328, z: -9.12}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 3911907711980257843}
   - {fileID: 3911557601340137933}
@@ -1376,20 +1376,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.605245, y: 1.6703699, z: 4.007657}
   m_Center: {x: 0.006225586, y: 0.33518457, z: 0.08926471}
---- !u!114 &3911240486971031446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3910116346616829631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d04148f92bc97842aab41b0fcd60b14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  roar: {fileID: 8300000, guid: 444ab08d6b8e12144b00b82cd8c53166, type: 3}
 --- !u!82 &1903016382541818520
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1403,7 +1389,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 2.81
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -1486,6 +1472,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2698476230061083752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3910116346616829631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498631d39be75824bb4f50e5f8c3ff17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  roar: {fileID: 8300000, guid: 444ab08d6b8e12144b00b82cd8c53166, type: 3}
 --- !u!1 &3910145998167062709
 GameObject:
   m_ObjectHideFlags: 0

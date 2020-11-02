@@ -26,7 +26,16 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    protected abstract IEnumerator Attack(int dmg);
+    protected abstract IEnumerator Attack();
     protected abstract IEnumerator Move();
     public abstract void TakeDamage(int dmg);
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name.Equals("Player"))
+        {
+            Debug.Log("touching player, should damage");
+            player.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
+        }
+    }
 }

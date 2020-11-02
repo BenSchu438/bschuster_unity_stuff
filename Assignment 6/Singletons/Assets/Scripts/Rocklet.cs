@@ -7,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Golem : Enemy
+public class Rocklet : Enemy
 {
     private bool attacking;
     private Animator animator;
@@ -20,9 +20,9 @@ public class Golem : Enemy
     {
         base.Awake();
 
-        health = 150;
-        damage = 35;
-        speed = 5f;
+        health = 40;
+        damage = 10;
+        speed = 9f;
         minDistance = 15f;
         attacking = false;
 
@@ -48,12 +48,12 @@ public class Golem : Enemy
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
             
             //if its within range and not already attacking, use its attack 
-            if (Vector3.Distance(player.transform.position, transform.position) <= minDistance && !attacking)
-            {
-                attacking = true;
-                animator.SetBool("Walk Forward", false);
-                StartCoroutine(Attack());
-            }
+            //if (Vector3.Distance(player.transform.position, transform.position) <= minDistance && !attacking)
+            //{
+            //    attacking = true;
+            //    animator.SetBool("Walk Forward", false);
+            //    StartCoroutine(Attack());
+            //}
 
             yield return null;
         }
@@ -62,24 +62,15 @@ public class Golem : Enemy
 
     protected override IEnumerator Attack()
     {
+        //stay still for a second after attacking
         speed = 0f;
         golemAudio.PlayOneShot(roar);
-        //stay still before attacking
-        animator.SetBool("Smash Attack", true);
-        yield return new WaitForSeconds(1.1f);
-
-        //charge straight forward with increased speed
         animator.SetBool("Stab Attack", true);
-        speed = 45f;
-        
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
-        //return speed to normal, stay still for a moment
-        speed = 0f;
-        yield return new WaitForSeconds(2f);
-
-        speed = 5f;
-        attacking = false;
+        //resume normal follow
+        animator.SetBool("Stab Attack", true);
+        speed = 9f;
     }
 
     //take damage, die
@@ -110,7 +101,7 @@ public class Golem : Enemy
     {
         if (collision.gameObject.name.Equals("Player"))
         {
-            Debug.Log("touching player, should damage");
+            StartCoroutine(Attack());
             player.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
         }
     }
