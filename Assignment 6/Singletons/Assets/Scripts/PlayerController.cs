@@ -1,11 +1,12 @@
 ﻿/*
  * Benjamin Schuster
  * Assignment 6
- * Controls player movment (took from assignment 5, removed jumping)
+ * Controls player (took from assignment 5, removed jumping, heavily modified)
  */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour, IDamageable
 {
@@ -36,12 +37,19 @@ public class PlayerController : MonoBehaviour, IDamageable
     //gamestate stuff
     private int health = 100;
     private bool vulnerable = true;
+    public Slider slider;
+
+    //sound effects
+    private AudioSource playerAudio;
+    public AudioClip hurt;
 
 
     private void Awake()
     {
         gravity *= gravityMulitplier;
         weapon = GetComponentInChildren<Sword>();
+        slider = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<Slider>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -75,16 +83,17 @@ public class PlayerController : MonoBehaviour, IDamageable
         {
             weapon.Attack();
         }
-
-
     }
 
+    //methods about player health
     public void TakeDamage(int dmg)
     {
         
         if (vulnerable)
         {
             health -= dmg;
+            slider.value = health;
+            playerAudio.PlayOneShot(hurt);
             Debug.Log("Player took damage, " + health + " health remaining.");
             vulnerable = false;
             StartCoroutine(Invulnerable());
@@ -100,13 +109,4 @@ public class PlayerController : MonoBehaviour, IDamageable
         vulnerable = true;
         Debug.Log("Vulnerable");
     }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("Finish"))
-    //    {
-    //        WinScreen.SetActive(true);
-    //        gameOver = true;
-    //    }
-    //}
 }

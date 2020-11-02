@@ -14,11 +14,16 @@ public class Sword : Weapon
     private float nextAttack;
     private Animator animator;
 
+    //sound effects
+    private AudioSource swordAudio;
+    public AudioClip swing;
+
     private new void Awake()
     {
         base.Awake();
         cam = GetComponentInParent<Camera>();
         animator = GetComponent<Animator>();
+        swordAudio = GetComponent<AudioSource>();
     }
 
     public override void Attack()
@@ -38,6 +43,7 @@ public class Sword : Weapon
             //    hitInfo.rigidbody.AddForce(cam.transform.TransformDirection(Vector3.forward) * hitForce, ForceMode.Impulse);
             //}
             ready = false;
+            swordAudio.PlayOneShot(swing);
             StartCoroutine(Recharge());
         }
         else if (ready)

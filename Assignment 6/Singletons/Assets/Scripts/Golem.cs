@@ -12,6 +12,9 @@ public class Golem : Enemy
     private bool attacking;
     private Animator animator;
 
+    private AudioSource golemAudio;
+    public AudioClip hurt;
+
     // Start is called before the first frame update
     protected override void Awake()
     {
@@ -24,6 +27,7 @@ public class Golem : Enemy
         attacking = false;
 
         animator = GetComponent<Animator>();
+        golemAudio = GetComponent<AudioSource>();
         StartCoroutine(Move());
     }
 
@@ -77,9 +81,11 @@ public class Golem : Enemy
         attacking = false;
     }
 
+    //take damage, die
     public override void TakeDamage(int dmg)
     {
         health -= dmg;
+        golemAudio.PlayOneShot(hurt);
         animator.SetBool("Take Damage", true);
         Debug.Log("Ouch! Dealt " + dmg + " damage! Rude!\n" + health + " health remaining.");
         if (health <= 0)
@@ -98,6 +104,7 @@ public class Golem : Enemy
         Destroy(gameObject);
     }
 
+    //damage player on hit
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name.Equals("Player"))
