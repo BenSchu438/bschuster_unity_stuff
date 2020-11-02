@@ -403,7 +403,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Level 1
+  m_Text: 'Lvl 1 (Medium)
 
 '
 --- !u!222 &145458594
@@ -1865,7 +1865,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Level 2
+  m_Text: 'Lvl 2 (Hard)
 
 '
 --- !u!222 &1037391053
@@ -3189,7 +3189,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tutorial
+  m_Text: Tutorial (Easy)
 --- !u!222 &2102713811
 CanvasRenderer:
   m_ObjectHideFlags: 0
