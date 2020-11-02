@@ -13,7 +13,7 @@ public class Golem : Enemy
     private Animator animator;
 
     private AudioSource golemAudio;
-    public AudioClip hurt;
+    public AudioClip roar;
 
     // Start is called before the first frame update
     protected override void Awake()
@@ -63,6 +63,7 @@ public class Golem : Enemy
     protected override IEnumerator Attack(int dmg)
     {
         speed = 0f;
+        golemAudio.PlayOneShot(roar);
         //stay still before attacking
         animator.SetBool("Smash Attack", true);
         yield return new WaitForSeconds(1.1f);
@@ -85,7 +86,6 @@ public class Golem : Enemy
     public override void TakeDamage(int dmg)
     {
         health -= dmg;
-        golemAudio.PlayOneShot(hurt);
         animator.SetBool("Take Damage", true);
         Debug.Log("Ouch! Dealt " + dmg + " damage! Rude!\n" + health + " health remaining.");
         if (health <= 0)

@@ -1466,7 +1466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1903016382541818520, guid: 0402f27eb98254f41ba55704da7b447e, type: 3}
       propertyPath: m_Pitch
-      value: 1.94
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 3910116346616829631, guid: 0402f27eb98254f41ba55704da7b447e, type: 3}
       propertyPath: m_Name
@@ -1476,6 +1476,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3911240486971031446, guid: 0402f27eb98254f41ba55704da7b447e, type: 3}
+      propertyPath: roar
+      value: 
+      objectReference: {fileID: 8300000, guid: 444ab08d6b8e12144b00b82cd8c53166, type: 3}
     - target: {fileID: 3911463056189770093, guid: 0402f27eb98254f41ba55704da7b447e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
