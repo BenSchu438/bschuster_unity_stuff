@@ -17,7 +17,7 @@ public class Rocklet : Enemy
 
         health = 40;
         damage = 10;
-        speed = 9f;
+        speed = 11f;
 
         animator = GetComponent<Animator>();
         enemyAudio = GetComponent<AudioSource>();

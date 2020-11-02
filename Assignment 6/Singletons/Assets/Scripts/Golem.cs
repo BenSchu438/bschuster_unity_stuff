@@ -20,7 +20,7 @@ public class Golem : Enemy
 
         health = 150;
         damage = 35;
-        speed = 5f;
+        speed = 8f;
 
         minDistance = 15f;
         attacking = false;
@@ -77,9 +77,9 @@ public class Golem : Enemy
 
         //return speed to normal, stay still for a moment
         speed = 0f;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.2f);
 
-        speed = 5f;
+        speed = 8f;
         attacking = false;
     }
 }

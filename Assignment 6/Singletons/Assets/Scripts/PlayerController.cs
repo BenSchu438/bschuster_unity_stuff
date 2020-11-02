@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private protected IEnumerator Invulnerable()
     {
         Debug.Log("Invulnerable");
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         vulnerable = true;
         Debug.Log("Vulnerable");
     }
