@@ -9,11 +9,9 @@ using UnityEngine;
 
 public class Golem : Enemy
 {
+    //additional variables for variet
     private bool attacking;
-    private Animator animator;
-
-    private AudioSource golemAudio;
-    public AudioClip roar;
+    private float minDistance;
 
     // Start is called before the first frame update
     protected override void Awake()
@@ -23,14 +21,16 @@ public class Golem : Enemy
         health = 150;
         damage = 35;
         speed = 5f;
+
         minDistance = 15f;
         attacking = false;
 
         animator = GetComponent<Animator>();
-        golemAudio = GetComponent<AudioSource>();
+        enemyAudio = GetComponent<AudioSource>();
         StartCoroutine(Move());
     }
 
+    //specialized movement
     protected override IEnumerator Move()
     {
         Vector3 temp;
@@ -60,10 +60,11 @@ public class Golem : Enemy
 
     }
 
+    //specialized attack
     protected override IEnumerator Attack()
     {
         speed = 0f;
-        golemAudio.PlayOneShot(roar);
+        enemyAudio.PlayOneShot(roar);
         //stay still before attacking
         animator.SetBool("Smash Attack", true);
         yield return new WaitForSeconds(1.1f);
@@ -81,38 +82,4 @@ public class Golem : Enemy
         speed = 5f;
         attacking = false;
     }
-
-    //take damage, die
-    public override void TakeDamage(int dmg)
-    {
-        health -= dmg;
-        animator.SetBool("Take Damage", true);
-        Debug.Log("Ouch! Dealt " + dmg + " damage! Rude!\n" + health + " health remaining.");
-        if (health <= 0)
-        {
-            //If dead, call coroutine to let die (for animation purposes)
-            StartCoroutine(Die());
-        }
-    }
-
-    private IEnumerator Die()
-    {
-        speed = 0f;
-        animator.SetBool("Die", true);
-        yield return new WaitForSeconds(1f);
-
-        GameManager.Instance.enemiesRemaining--;
-        Destroy(gameObject);
-    }
-
-    //damage player on hit
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name.Equals("Player"))
-        {
-            Debug.Log("touching player, should damage");
-            player.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
-        }
-    }
-    
 }
