@@ -5,17 +5,20 @@
  */
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http;
 using UnityEngine;
 
 public class Sword : Weapon
 {
     public Camera cam;
     private float nextAttack;
+    private Animator animator;
 
     private new void Awake()
     {
         base.Awake();
         cam = GetComponentInParent<Camera>();
+        animator = GetComponent<Animator>();
     }
 
     public override void Attack()
@@ -43,11 +46,13 @@ public class Sword : Weapon
             StartCoroutine(Recharge());
         }
     }
-    
+
     protected override IEnumerator Recharge()
     {
+        animator.SetBool("Swing", true);
         yield return new WaitForSeconds(cooldown);
         ready = true;
+        animator.SetBool("Swing", false);
         Debug.Log("Attack Recharged");
     }
 }

@@ -17,7 +17,7 @@ public abstract class Weapon: MonoBehaviour
     protected void Awake()
     {
         damage = 30;
-        range = 10f;
+        range = 6f;
         cooldown = 0.7f;
         ready = true;
     }
