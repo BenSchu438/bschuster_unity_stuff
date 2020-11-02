@@ -47,11 +47,11 @@ public class GameManager : Singleton<GameManager>
     private void Update()
     {
         //pauses and resumes on esc press. Cannot pause on main menu screen
-        if(Input.GetKeyDown(KeyCode.Escape) && !isPaused && !CurrentLevelName.Equals("MainMenu") && !gameOver)
+        if(Input.GetKeyDown(KeyCode.P) && !isPaused && !CurrentLevelName.Equals("MainMenu") && !gameOver)
         {
             Pause();
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused && !CurrentLevelName.Equals("MainMenu") && !gameOver)
+        else if (Input.GetKeyDown(KeyCode.P) && isPaused && !CurrentLevelName.Equals("MainMenu") && !gameOver)
         {
             UnPause();
         }

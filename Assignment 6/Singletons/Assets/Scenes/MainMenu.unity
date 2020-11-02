@@ -1703,7 +1703,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Press 'Esc' to pause and resume
+  m_Text: Press 'P' to pause and resume
 --- !u!222 &768734773
 CanvasRenderer:
   m_ObjectHideFlags: 0
