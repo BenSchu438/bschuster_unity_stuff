@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private float powerupStrength = 15.0f;
     public GameObject powerupIndicator;
 
+    public GameObject loseText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,13 @@ public class PlayerController : MonoBehaviour
         forwardInput = Input.GetAxis("Vertical");
 
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.4f, 0);
+
+        if (transform.position.y <= -10)
+        {
+            GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnManager>().gameOver = true;
+            loseText.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
     private void FixedUpdate()
     {

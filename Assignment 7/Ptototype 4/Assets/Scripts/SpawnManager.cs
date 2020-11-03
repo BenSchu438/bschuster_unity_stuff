@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -8,14 +10,22 @@ public class SpawnManager : MonoBehaviour
     public GameObject powerupPrefab;
     private float spawnRange = 9;
 
-    int enemyCount;
-    int powerupCount;
+    private int enemyCount;
+    private int powerupCount;
     public int waveNumber = 1;
 
-    void Start()
+    //manages UI and game over
+    public Text waveCounter;
+    public GameObject winText;
+    public bool gameOver = false;
+
+    //Manages initial onscreen instructions
+    public GameObject instructionText;
+    private bool gameStart = false;
+
+    private void Start()
     {
-        //this can be removed as the starting wave will be initialized in update
-        //SpawnEnemyWave(waveNumber);
+        Time.timeScale = 0f;
     }
 
     private void SpawnEnemyWave(int enemiesToSpawn)
@@ -42,13 +52,39 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //start game
+        if (!gameStart && Input.GetKeyDown(KeyCode.Space))
+        {
+            instructionText.SetActive(false);
+            Time.timeScale = 1f;
+            gameStart = true;
+        }
+
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
         powerupCount = GameObject.FindGameObjectsWithTag("Powerup").Length;
 
-        if (enemyCount == 0)
+        if (enemyCount == 0 && gameStart)
         {
             waveNumber++;
-            SpawnEnemyWave(waveNumber);
+            if (waveNumber <= 10)
+            {
+                SpawnEnemyWave(waveNumber);
+                waveCounter.text = "Wave: " + waveNumber;
+            }
+        }        
+
+        //Win when passed wave 10
+        if(waveNumber > 10)
+        {
+            Time.timeScale = 0f;
+            winText.SetActive(true);
+            gameOver = true;
+        }
+
+        //reset scene on game over
+        if(Input.GetKeyDown(KeyCode.R) && gameOver)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
