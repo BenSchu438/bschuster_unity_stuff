@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Benjamin Schuster
+ * Challenge 5
+ * Determins target properties
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

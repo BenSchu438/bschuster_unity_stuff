@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Benjamin Schuster
+ * Challenge 5
+ * Destroys selected object
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
