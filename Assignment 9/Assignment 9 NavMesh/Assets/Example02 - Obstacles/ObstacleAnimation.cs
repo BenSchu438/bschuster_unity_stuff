@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Benjamin Schuster
+ * Assignment 9 
+ * Smoothly move obstacles
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
